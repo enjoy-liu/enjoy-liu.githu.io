@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="LYZ的博客">
 <meta property="og:description" content="windows terminal PowerShell 如果想要和Linux系统一样用vim 来对文本进行一些操作可以使用 git 自带的vim 安装 windows terminal 可以在 windows 商店下载  git 安装这个网上都有教程，很简单无脑安装就可以   查看 PowerShell home首先用管理员权限登录 windows terminal 123456789101112">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://enjoy-liu.github.io/PowerShell-vim/windows-terminal.png">
-<meta property="og:image" content="https://enjoy-liu.github.io/PowerShell-vim/git-etc.png">
+<meta property="og:image" content="https://enjoy-liu.github.io/2022/05/06/PowerShell/PowerShell-vim/windows-terminal.png">
+<meta property="og:image" content="https://enjoy-liu.github.io/2022/05/06/PowerShell/PowerShell-vim/git-etc.png">
 <meta property="article:published_time" content="2022-05-06T15:32:05.000Z">
 <meta property="article:modified_time" content="2022-05-07T03:57:40.142Z">
 <meta property="article:author" content="lyz">
 <meta property="article:tag" content="PowerShell">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://enjoy-liu.github.io/PowerShell-vim/windows-terminal.png">
+<meta name="twitter:image" content="https://enjoy-liu.github.io/2022/05/06/PowerShell/PowerShell-vim/windows-terminal.png">
 
 <link rel="canonical" href="https://enjoy-liu.github.io/2022/05/06/PowerShell/PowerShell-vim/">
 
@@ -210,7 +210,7 @@
       
         <p>windows terminal PowerShell 如果想要和Linux系统一样用vim 来对文本进行一些操作可以使用 git 自带的vim</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li><p>windows terminal 可以在 windows 商店下载<br><img src="/PowerShell-vim/windows-terminal.png" alt="windows-terminal"></p>
+<li><p>windows terminal 可以在 windows 商店下载<br><img src="/2022/05/06/PowerShell/PowerShell-vim/windows-terminal.png" alt="windows-terminal"></p>
 </li>
 <li><p>git 安装这个网上都有教程，很简单无脑安装就可以</p>
 </li>
@@ -221,7 +221,7 @@
 <h2 id="配置profile"><a href="#配置profile" class="headerlink" title="配置profile"></a>配置profile</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$SCRIPTPATH = &quot;D:\ProgramFiles\Git\usr\share\vim&quot;    # 此行根据$VIMPATH寻找相应vim路径即可</span><br><span class="line">$VIMPATH    = &quot;D:\ProgramFiles\Git\usr\bin\vim.exe&quot;  # 此行为1中vim.exe路径</span><br><span class="line"></span><br><span class="line">Set-Alias vi   $VIMPATH</span><br><span class="line">Set-Alias vim  $VIMPATH</span><br><span class="line"></span><br><span class="line"># for editing your Vim settings</span><br><span class="line">Function Edit-Vimrc</span><br><span class="line">&#123;</span><br><span class="line">    vim $home\_vimrc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><p>配置完后重新打开windows terminal<br>vim 就可以使用了</p>
-<p>在使用过程中可能会碰到输入中文乱码的问题<br>在 git 安装目录下找到etc目录进去找到vimrc 文件 打开 把下面的设置填写上去<br><img src="/PowerShell-vim/git-etc.png" alt="git-etc"></p>
+<p>在使用过程中可能会碰到输入中文乱码的问题<br>在 git 安装目录下找到etc目录进去找到vimrc 文件 打开 把下面的设置填写上去<br><img src="/2022/05/06/PowerShell/PowerShell-vim/git-etc.png" alt="git-etc"></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936</span><br><span class="line">set termencoding=utf-8</span><br><span class="line">set encoding=utf-8</span><br></pre></td></tr></table></figure>
 
 
